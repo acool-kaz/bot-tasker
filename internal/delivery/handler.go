@@ -35,7 +35,7 @@ func (h *Handler) StartHandler(c telebot.Context) error {
 	if err := h.service.User.AddNewUser(user); err != nil {
 		return err
 	}
-	return c.Send(fmt.Sprintf("Привет, %s. Список всех команд: /start, /addTask, /tasks, /deleteTask", user.FirstName))
+	return c.Send(fmt.Sprintf("Привет, %s. Список всех команд: \n/start\n/addTask\n/tasks\n/deleteTask.", user.FirstName))
 }
 
 func (h *Handler) AddTaskHandler(c telebot.Context) error {
